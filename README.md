@@ -1,1 +1,1 @@
-# php-store-basic
+# PHP store basic
