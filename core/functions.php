@@ -23,3 +23,20 @@ function redirect_to($url) {
     header("Location:" . $url);
     exit;
 }
+
+
+// Check if user is logged in
+function is_logged_in() {
+    if(isset($_SESSION['user_id'])) {
+        return true;
+    } 
+    return false;
+}
+
+
+// redirect if user id not logged in
+function redirect_if_not_logged_in() {
+    if(!is_logged_in()) {
+        redirect_to("login.php");
+    }
+}

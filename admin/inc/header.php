@@ -25,11 +25,18 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Add Product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">View Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+
+                    <?php if(is_logged_in()): ?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL . 'admin' ?>">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL . 'admin/add-product.php' ?>">Add Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL . 'admin/view-products.php' ?>">View Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL . 'admin/logout.php' ?>">Logout</a></li>
+
+                    <?php else: ?>
+
+                    <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL . 'admin/login.php' ?>">Login</a></li>
+                    <?php endif; ?>
+                    
                 </ul>
             
             </div>    
