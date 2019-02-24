@@ -67,7 +67,7 @@
                 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control" id="email" placeholder="admin@gmail.com">
+                        <input type="text" name="email" class="form-control" id="email" placeholder="admin@gmail.com" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
                     </div>
 
                     <div class="form-group">
