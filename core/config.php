@@ -17,3 +17,6 @@ defined('DB_PASS') OR define('DB_PASS', '');
 
 // Define error variable
 $errors = array();
+
+// Set timezones
+date_default_timezone_set('Asia/Kathmandu');

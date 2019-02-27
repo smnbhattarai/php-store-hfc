@@ -3,6 +3,11 @@
 <?php redirect_if_not_logged_in(); ?>
 
 <?php
+
+    $name = '';
+    $price = '';
+    $description = '';
+
     if(isset($_POST['addPdt'])) {
 
         $name = sanitize($_POST['name']);
@@ -71,7 +76,7 @@
 
             <div class="form-group">
                 <label for="name">Product Name: <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="name" placeholder="Product Name" id="name">
+                <input type="text" class="form-control" name="name" placeholder="Product Name" id="name" value="<?php echo $name; ?>">
             </div>
 
             <div class="form-group">
@@ -94,7 +99,7 @@
                 <label for="price">Price</label>
                 <div class="input-group">
                     <div class="input-group-text">$</div>
-                    <input type="text" class="form-control" name="price" id="price" placeholder="In USD">
+                    <input type="text" class="form-control" name="price" id="price" placeholder="In USD" value="<?php echo $price; ?>">
                 </div>
             </div>
 
@@ -108,7 +113,7 @@
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                <textarea name="description" id="description" cols="30" rows="20" class="form-control"><?php echo $description; ?></textarea>
             </div>
 
             <button type="submit" class="btn btn-lg btn-primary float-right" name="addPdt">Add Product</button>
