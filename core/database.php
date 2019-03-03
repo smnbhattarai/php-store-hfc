@@ -20,3 +20,15 @@ function selectAll($table) {
     $result = mysqli_query($db, $query);
     return $result;
 }
+
+
+// function to select one row
+function selectOne($table, $id) {
+    global $db;
+    $table = mysqli_real_escape_string($db, $table);
+    $id = mysqli_real_escape_string($db, $id);
+    $query = "SELECT * FROM $table WHERE id = $id LIMIT 1";
+    $result = mysqli_query($db, $query);
+    $data = mysqli_fetch_assoc($result);
+    return $data;
+}

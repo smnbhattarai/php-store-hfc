@@ -33,7 +33,13 @@ $products = selectAll('products');
         <td><?php echo $row['in_stock'] ? 'Yes' : 'No' ?></td>
         <td><?php echo date("Y M d", strtotime($row['created_at'])); ?></td>
         <td><?php echo date("Y M d", strtotime($row['updated_at'])); ?></td>
-        <td>Edit | Delete</td>
+        <td>
+        
+        <a href="edit-product.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
+        
+        <a href="delete-product.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm delProductAdmin">Delete</a>
+        
+        </td>
     </tr>
 <?php endwhile; ?>
 

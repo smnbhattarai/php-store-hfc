@@ -17,7 +17,7 @@
         $stock  = sanitize($_POST['in_stock']);
 
         if(empty($name)) {
-            $errors[] = "Please add product name.";
+            $errors['name'] = "Please add product name.";
         }
 
         if(empty($size)) {
@@ -76,7 +76,12 @@
 
             <div class="form-group">
                 <label for="name">Product Name: <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="name" placeholder="Product Name" id="name" value="<?php echo $name; ?>">
+                <input type="text" class="form-control <?php echo isset($errors['name']) ? 'is-invalid' : ''; ?>" name="name" placeholder="Product Name" id="name" value="<?php echo $name; ?>">
+                <?php if(isset($errors['name'])): ?>
+                <div class="invalid-feedback">
+                    <?php echo $errors['name']; ?>
+                </div>
+                <?php endif; ?>
             </div>
 
             <div class="form-group">
