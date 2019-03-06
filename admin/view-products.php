@@ -5,7 +5,6 @@ redirect_if_not_logged_in();
 
 // Get all products
 $products = selectAll('products');
-
 ?>
 
 <h4 class="mb-4 text-center text-info">All Products</h4>
@@ -37,7 +36,7 @@ $products = selectAll('products');
         
         <a href="edit-product.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
         
-        <a href="delete-product.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm delProductAdmin">Delete</a>
+        <a href="delete-product.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm admin-product-delete">Delete</a>
         
         </td>
     </tr>
