@@ -3,7 +3,6 @@
 <?php 
 
 redirect_if_not_logged_in(); 
-
 if(!isset($_GET['id'])) {
     redirect_to('view-products.php');
 }
@@ -12,24 +11,15 @@ $id = $_GET['id'];
 $id = preg_replace("/\D/", '', $id);
 $id = (int)$id;
 
+$product = selectOne('products', $id);
+
 if(isset($id) && isset($_GET['delete']) && $_GET['delete'] == 'true') {
-    unlink(BASE_PATH . 'images/products/' . $product['image']);
+    $filepath = BASE_PATH . 'images/products/' . $product['image'];
+    unlink($filepath);
     $query = "DELETE FROM products WHERE id = $id";
     mysqli_query($db, $query);
     redirect_to('view-products.php');
 }
-
-?>
-
-
-
-<?php 
-
-$id = $_GET['id'];
-$id = preg_replace("/\D/", '', $id);
-$id = (int)$id;
-
-$product = selectOne('products', $id);
 
 ?>
 
@@ -62,7 +52,6 @@ $product = selectOne('products', $id);
 
         <div>
         <a href="delete-product.php?id=<?php echo $product['id']; ?>&delete=true" class="btn btn-danger btn-block btn-lg">Yes! Delete this product permanently</a>
-        
         </div>
 
     </div>
