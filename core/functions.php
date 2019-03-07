@@ -3,7 +3,7 @@
 // for debugging 
 function nice_dump($array) {
     echo '<pre>';
-    var_dump($array);
+    print_r($array);
     echo '</pre>';
 }
 
