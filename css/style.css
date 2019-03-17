@@ -1,3 +1,57 @@
 .ck-editor__editable {
     min-height: 400px;
 }
+
+.table td {
+    vertical-align: middle;
+}
+
+.place-order {
+    background: url('../images/order-bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.place-order-bg {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 35px 0;
+}
+
+.description {
+    padding: 35px 0;
+    background: #f1f1f1;
+}
+
+.contact-bg {
+    background: url('../images/contact-bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact-area{
+    background: rgba(255, 255, 255, 0.6);
+    padding: 35px 0;
+}
+
+.table-borderless th, .table-borderless td, .table-borderless tr {
+    border: none;
+}
+
+.zoom:hover {
+    -webkit-transform: scale(1.6); 
+    -moz-transform: scale(1.6);
+    -o-transform: scale(1.6);
+    transform: scale(1.6);
+    z-index: 1999;
+}
+
+.zoom {
+    -webkit-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
+}

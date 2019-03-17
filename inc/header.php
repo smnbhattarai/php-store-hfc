@@ -32,7 +32,7 @@
 
                 <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>contact.php">Contact</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>cart.php">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>cart.php">Cart <span class="badge badge-warning"><?php echo count($_SESSION["cart"]); ?></span></a></li>
 
             </ul>
         

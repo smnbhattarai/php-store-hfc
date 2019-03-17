@@ -13,7 +13,7 @@
         $name = sanitize($_POST['name']);
         $size = sanitize($_POST['size']);
         $price = sanitize($_POST['price']);
-        $desc  = sanitize($_POST['description']);
+        $desc  = htmlspecialchars(sanitize($_POST['description']), ENT_QUOTES);
         $stock  = sanitize($_POST['in_stock']);
 
         if(empty($name)) {

@@ -20,3 +20,8 @@ $errors = array();
 
 // Set timezones
 date_default_timezone_set('Asia/Kathmandu');
+
+// Set cart session
+if(!isset($_SESSION["cart"])){
+    $_SESSION["cart"] = [];
+}
